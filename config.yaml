@@ -1,0 +1,32 @@
+Nacos:
+  Addr: "115.190.54.31"
+  Port: 8848
+  Namespace: ""
+  DataID: "demo-config"
+  Group: "DEFAULT_GROUP"
+
+Mysql:
+  Host: "115.190.54.31"
+  Port: 3306
+  User: "root"
+  Password: "mysql_4bmhtA"
+  Database: "ecomshop"
+
+Redis:
+  Host: "115.190.54.31"
+  Port: 6379
+  Password: "redis_DEFDib"
+  Database: 0
+
+Consul:
+  Host: "115.190.54.31"
+  Port: 8500
+  ServiceName: "EcomShop-product"
+  ServicePort: 50051
+  TTL: 10
+
+AliPay:
+  AppId: "9021000157678350"
+  Key: "MIIEpAIBAAKCAQEAsv1v9wlGA7aaaKK+Uvp52lK1YRgpPNv7IvISEWcc7sVFPqk6rrIQEwNgiACZAD49+RZduotv0KJQzNVfugN+3fejvrB3l1SYEHu4kvaDZifM1zSUTLBvzIs1G47i3DrAYpFuDhwf+GNcrCQRRbeUFAWboc6+m/ILuF+eu1Dqp1hejYoshwNs6+m4mYbKl+NLYRkvQapswxK+3ajHig5gI3hNu4qMJtyspQQXqIqqjsbE+AvVqGKMhPnYe07Q//2tXMukOQA6Z9Op7q87qV/NxW28etWjiGd1OvmXfQQHx6pFxG4DYnMsjC5gdw/h7AUX9opOHyHvNNHM/tbwMhb5AQIDAQABAoIBADzyp6mK8thY2YM/x2ch+1QoTbLeM0yR65Yer6BVaDi127pWjbDm2SpgQAKPkYnPp/Kldw0KZey5GKJnFc2VWyHiLVPFazOQjqcuOc9xOZUTgGDXepgSjD8uN8tGgGFVcCUgOEV9tjUyQGAtd+Qxeq7GqhQS/jzD0tHZXYeTKhQJJOfk2bmEnOPlI7202o7WcZGgGk0DcWN8uNSxTrKWN4UX3zAIeMmsMSCNk9EeBGWrVsaY+aED0RmFtl6UJE7oghOyxvJH97mgf7R8xdUjr5jy3HbiNjdQHGeFFPDqRMxWDEKeXQ/biw8Yz9sehTSiA8ypHN8VjUPrFsV7aMsxEnECgYEA6l39DzRe9TrDzJdWlPP8yCAYzltQkjGCQ61q0mKq6hdbrc2f/A95bqlnw9/6UKp2/InlFlq2bjiUzeyGDKSXLePlnX68t62lWsOUdM8oMPqGDJ1whvy7kSYHIiNupWziz0CHenccn98hl9bPMpeE7Lu0F7L6MssqmoXUiw3ZN6MCgYEAw4LoFrAhzSwla9x2gSB4bTpIa8MXG4KUyna+rQWPTeeX30ys7ZVJ4XeoBiig/ZJ0Eu1xZtuJT+6d2Yw7T+iJlva1ijnLW24lBmGcs0hrOeZ0W7wwPODDklEKix+AHoEzA4QxDtYKNQCzxrMVr4X5oAabjV/3sF+lVLKGnQwVZwsCgYAqZfZx2beUBZ2GVZqEN99zFNtn+X0J9YrrU2QPy2nAD5m2R4y5vNLrAhqThOFz1mLQLOIUuTRnnDTPTAq0HtJ6qs/PPi5FzFQtp1QkDZXnxmqZvaGtyerkx0xjEKXjp18gvzvDG+lBwswA/Atfy6lwakSaRPaeWcLLUYqx3T9+oQKBgQCGOh+hQ/dQ51ghv1BUwrgrNXJ3GY+JwZLplbC/FSwXrkKkef3Xd0Er3HytDcPJk3zBaecLWPniuM4Ch7ZI3DtqO6LTbW5iLTKaOPXeWH/VVpTYTlFH2oAquhzk+xF43/boGR+dMfH8BalnZ5gh03dYGHE/FH32xxO5HIAy3hLrlQKBgQDeVmV9nV/QxQCzzoTUov1hZLYUS2pEPlF63sACV5kJYcEghAB9Ee0k/TSofBWVAe9b8RaizfDZazAX0GjL7kuWhclPenFKPPnmMEIp4cMwCe1e0K1Ib+uY6ulwlXhtLE3NKCNnmBsddiF71FJTnXgnue3R76VXtg9I6FBraDabiQ=="
+  NotifyPay: "http://191999f9.r16.cpolar.top/notify/pay"
+  Return: "http://191999f9.r16.cpolar.top/callback"

@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package stream;
+
+option go_package = "./";
+
+message Product {
+  // 商品ID
+  int64 id = 1;
+  // 商品名称
+  string name = 2;
+  // 商品价格
+  float price = 3;
+  // 商品库存
+  int64 stock = 4;
+  // 商品对应积分
+  int64 points = 5;
+  // 商品状态（0-下架，1-上架）
+  int32 status = 6;
+  // 创建时间
+}
+
+// 新增商品请求
+message CreateProductRequest {
+  string name = 1;
+  float price = 2;
+  int64 stock = 3;
+  int64 points = 4;
+  int32 status = 5;
+}
+
+// 新增商品响应
+message CreateProductResponse {
+  bool success = 1;
+  int64 product_id = 2;
+  string message = 3;
+}
+
+// 查询商品请求（按ID）
+message GetProductByIdRequest {
+  int64 product_id = 1;
+  int64 page = 2;
+  int64 size = 3;
+}
+
+// 查询商品响应
+message GetProductByIdResponse {
+  bool success = 1;
+  repeated Product product = 2;
+  string message = 3;
+}
+
+// 更新商品请求
+message UpdateProductRequest {
+  int64 product_id = 1;
+  string name = 2;
+  float price = 3;
+  int64 stock = 4;
+  int64 points = 5;
+  int32 status = 6;
+}
+
+// 更新商品响应
+message UpdateProductResponse {
+  bool success = 1;
+  string message = 3;
+}
+
+// 删除商品请求
+message DeleteProductRequest {
+  int64 product_id = 1;
+}
+
+// 删除商品响应
+message DeleteProductResponse {
+  bool success = 1;
+  string message = 3;
+}
+
+// 库存扣减请求（适配MQ库存扣减场景）
+message DeductStockRequest {
+  int64 product_id = 1;
+  int64 deduct_num = 2;
+}
+
+// 库存扣减响应
+message DeductStockResponse {
+  bool success = 1;
+  int64 remain_stock = 2;
+  string message = 3;
+}
+
+// 商品服务定义（完整CURD + 库存操作）
+service ProductService {
+  // 新增商品
+  rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse);
+  // 查询商品（按ID）
+  rpc GetProductById(GetProductByIdRequest) returns (GetProductByIdResponse);
+  // 更新商品
+  rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse);
+  // 删除商品
+  rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse);
+  // 库存扣减（适配MQ消费场景）
+  rpc DeductStock(DeductStockRequest) returns (DeductStockResponse);
+}

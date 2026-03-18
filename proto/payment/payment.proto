@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package payment;
+
+option go_package = ".";
+
+
+message AlipayRequest {
+  int64 user_id = 1;
+  repeated Goods goods=2;
+}
+
+
+message AlipayResponse {
+  bool success = 1;
+  string orderSn = 2;
+  float total=3;
+  string pay_url = 5;
+}
+
+message Goods {
+    int64 goodsID=1;
+    int64 quantity=2;
+}
+
+
+message PaymentNotifyRequest {
+  string order_sn = 1;
+}
+
+message PaymentNotifyResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service PaymentService {
+
+  rpc Alipay(AlipayRequest) returns (AlipayResponse);
+
+  rpc HandlePaymentNotify(PaymentNotifyRequest) returns (PaymentNotifyResponse);
+
+}
